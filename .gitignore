@@ -1,0 +1,9 @@
+build
+_build
+__pycache__
+*~
+.mypy_cache
+*.egg-info
+.*.sw?
+*.so
+_autosummary
