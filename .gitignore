@@ -7,3 +7,5 @@ __pycache__
 .*.sw?
 *.so
 _autosummary
+src/linux_keyring/_libkeyutils.c
+tags
