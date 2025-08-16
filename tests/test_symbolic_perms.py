@@ -53,7 +53,7 @@ def expected_mask_from_single_clause(who: str, op: str, spec: str) -> int:
     return mask
 
 
-def all_perm_subsets(include_empty: bool = False) -> Generator[str]:
+def all_perm_subsets(include_empty: bool = False) -> Generator[str, None, None]:
     """Yield permspecs for all non-empty subsets of 'vrwxla' (and optionally the empty string)."""
     chars = PERM_CHARS
     if include_empty:

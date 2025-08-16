@@ -20,7 +20,7 @@ pytestmark = pytest.mark.skipif(not _linux_only(), reason="Linux keyrings requir
 
 
 @pytest.fixture(name="session_kr")
-def generate_session_kr() -> Generator[ku.key_serial_t]:
+def generate_session_kr() -> Generator[ku.key_serial_t, None, None]:
     '''
     Create/join an isolated session keyring for each test and ensure cleanup.
     '''
@@ -37,7 +37,7 @@ def generate_session_kr() -> Generator[ku.key_serial_t]:
             pass
 
 
-def test_join_session_keyring_and_get_id(session_kr: Generator[ku.key_serial_t]) -> None:  # pylint: disable=unused-argument
+def test_join_session_keyring_and_get_id(session_kr: Generator[ku.key_serial_t, None, None]) -> None:  # pylint: disable=unused-argument,line-too-long
     rid = ku.keyctl_get_keyring_ID(ku.api.KEY_SPEC_SESSION_KEYRING, 0)
     assert isinstance(rid, int) and rid != 0
 
